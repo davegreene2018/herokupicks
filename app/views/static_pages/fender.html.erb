@@ -1,0 +1,33 @@
+<h1>Fender</h1>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+
+<div id="itemsContainer">
+    <table id="customers">
+
+  <tbody>
+   
+    <% @items.each do |item| %>
+ 
+   
+      <tr>
+       
+      
+        <td><%= item.title %></td>
+       
+        <td><%= item.description %></td>
+        
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<br>
+
+

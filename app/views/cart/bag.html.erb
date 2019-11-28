@@ -1,0 +1,51 @@
+<h1 align="center"> your picks&licks bag</h1>
+
+<div id="itemsContainerBag">
+  
+  
+     
+      <% @items.each do |item| %>
+      <div class="itemBag">
+       <h1><%= item.title %></h1>
+       
+       <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+      
+       <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+       <br>
+        Category: <%= item.category %>
+        <br>
+        Brand: <%= item.brand %>
+        
+      </div>
+    <% end %>
+    <% @items.each do |item| %>
+     <div class="itemBag">
+   <%= item.description %>
+    </div><% end %>
+     <div class="itemBag">
+       <a href="/items" class="button">Continue Shopping</a> 
+       <a href="/checkout" class="button">Checkout</a>
+       </div>
+</div>
+
+ <div id="itemsContainer">
+  
+  
+     <h1 align="center"> Similar items of interest</h1>
+      <% @orderitems.order(id: :desc).limit(3).each  do |orderitem| %>
+      <div class="itemhols">
+       <h1><%= orderitem.title %></h1> 
+       <%= link_to (image_tag orderitem.image_url, :class => "itemholsIm"), @item %>
+       <p></p>
+       <a href="/items/<%= orderitem.item_id %>" class="button">View Item</a>
+      
+        
+      </div>
+    <% end %>
+      
+
+
+<br>
+
+           
+          

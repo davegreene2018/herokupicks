@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> </title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333333;
+  min-width: 160px;
+  
+  
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    
+       <header class="headSec">
+      <h1>Picks & Licks</h1>
+      <p>Quality guitars and accessories at knock out prices.</p>
+       
+       
+     
+      
+    </header>
+    <div class="navbar">
+      <ul class="topnav">
+          
+       <li><%= link_to "HOME", "/" %></li>
+        <div class="dropdown">
+    <button class="dropbtn">PRODUCTS 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <%= link_to "Products", "/items"  %></li>
+     </li><%= link_to "FENDER", fender_path  %></li>
+     </li><%= link_to "GIBSON", gibson_path  %></li>
+     </li><%= link_to "TAYLOR", taylor_path  %></li>
+     </li><%= link_to "MARTIN", martin_path  %></li>
+     </li><%= link_to "TAKAMINE", takamine_path  %></li>
+    </div>
+  </div> 
+      
+        
+        
+
+        <li><%= link_to "ABOUT", about_path %></li>
+        <li><%= link_to "HELP", help_path %></li>
+        <li><%= link_to "VIEW CART", "/cart" %></li>
+                                             <% if user_signed_in? %>
+                  
+                 <li><%= link_to 'EDIT PROFILE', edit_user_registration_path %></li>
+                 <li><%= link_to "ORDERS", orders_path  %></li>
+                 <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+                 <li><%= link_to 'REGISTER', new_user_registration_path %></li> 
+                 <li><%= link_to 'SIGN IN', new_user_session_path %></li>
+          <% end %>
+          <% if user_signed_in? %>
+           <% if current_user.admin? %>
+          <li><%= link_to "USERS", users_path  %></li>
+           <% end %> <% end %>
+          <li><%= link_to "SEARCH", search_path  %></li>
+          <li><%= link_to "WISH LIST", "/cart" %></li>
+         
+  </div>
+        
+         
+
+       
+
+
+        
+      </ul>
+    
+
+    <div class="container">
+    <%= yield %>
+    
+    </div>
+
+<footer class="foot">
+<p>Im the Footer</p>
+<%= link_to 'New Category', new_category_path, :class =>"button", :role=>"button"  %>
+<%= link_to 'New Item', new_item_path, :class =>"button", :role=>"button" %>
+
+</footer>
+
+  </body>
+</html>

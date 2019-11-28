@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wish_date: 2019-11-19 18:31:37
+  wishstatus: MyString
+
+two:
+  wish_date: 2019-11-19 18:31:37
+  wishstatus: MyString

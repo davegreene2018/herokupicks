@@ -1,0 +1,13 @@
+<%= form_tag("/search", :method => "post") do %>
+<table width="100%">
+    <tr>
+        <td width="92%">
+
+<%= text_field_tag(:q ) %>
+</td>
+<td width="8%">
+<%= submit_tag("Search") %>
+</td>
+<% end %>
+</tr>
+</table>

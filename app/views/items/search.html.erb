@@ -1,0 +1,56 @@
+ <%=render 'layouts/search'%>
+
+
+<% if @items.length == 0  %>
+
+<h2>No products were found to match your search</h2>
+<% end %>
+
+ <div id="itemsContainer">
+  
+  
+     
+      <% @items.each do |item| %>
+      <div class="itemhols">
+       <h1><%= item.title %></h1>
+       
+       <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+        <p><%= item.description %></p>
+       <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+       <br>
+        Category: <%= item.category %>
+        <br>
+        Brand: <%= item.brand %></p>
+       
+       <p>
+         <%= link_to 'View',  item, :class => "button", :role => "button" %>
+              
+     
+
+       <% if user_signed_in? %>
+         <% if current_user.admin? %>   
+<%= link_to 'New Item', new_item_path, :class =>"button", :role=>"button" %>
+<% end %>
+  <% end %>
+
+        
+        
+
+
+                        
+          
+          
+       
+
+          
+          
+
+       </p>
+        
+      </div>
+    <% end %>
+    
+      
+</div>
+
+<br>
