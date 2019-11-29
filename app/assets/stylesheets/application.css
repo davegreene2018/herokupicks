@@ -58,6 +58,18 @@ ul {
     
 }
 
+a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.foot a{
+  color: #FFF;
+  text-decoration: underline;
+  font-weight: bold;
+
+}
 li {float:left;}
 
 li a {
@@ -83,7 +95,7 @@ li a {
 
 
 .foot {
-    min-height: 180px;
+    min-height: 100px;
     background-color: #333333;
     width: 100%;
     margin-top: 10px;
@@ -326,7 +338,7 @@ input[type=submit]:hover {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #333333;
     color: white;
 }
 

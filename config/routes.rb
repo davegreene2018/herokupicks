@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   
   get '/upgrade/:id' => 'static_pages#upgrade'
   
-  get '/upgrade/:id' => 'static_pages#downgrade'
+  get '/downgrade/:id' => 'static_pages#downgrade'
   
   post '/search' => 'items#search'
   

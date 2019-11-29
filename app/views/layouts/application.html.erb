@@ -72,6 +72,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/c260db8988.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -109,7 +110,7 @@
         <li><%= link_to "ABOUT", about_path %></li>
         <li><%= link_to "HELP", help_path %></li>
         <li><%= link_to "VIEW CART", "/cart" %></li>
-         <li><%= link_to "USERS", users_path  %></li>
+         
                                              <% if user_signed_in? %>
                   
                  <li><%= link_to 'EDIT PROFILE', edit_user_registration_path %></li>
@@ -119,12 +120,15 @@
                  <li><%= link_to 'REGISTER', new_user_registration_path %></li> 
                  <li><%= link_to 'SIGN IN', new_user_session_path %></li>
           <% end %>
-          <% if user_signed_in? %>
-           <% if current_user.admin? %>
-          <li><%= link_to "USERS", users_path  %></li>
-           <% end %> <% end %>
+         
           <li><%= link_to "SEARCH", search_path  %></li>
           <li><%= link_to "WISH LIST", "/cart" %></li>
+           <% if user_signed_in? %>
+           <% if current_user.admin? %>
+          <li><%= link_to "USERS", users_path  %></li>
+          <%= link_to 'NEW CATEGORY', new_category_path %>
+           <%= link_to 'NEW ITEM', new_item_path %>
+           <% end %> <% end %>
          
   </div>
         
@@ -143,10 +147,12 @@
     </div>
 
 <footer class="foot">
-<p>Im the Footer</p>
-<%= link_to 'New Category', new_category_path, :class =>"button", :role=>"button"  %>
-<%= link_to 'New Item', new_item_path, :class =>"button", :role=>"button" %>
-
+<p>© picksandlicks 2019</p>
+<p>
+<a href="#"><i class="fab fa-twitter fa-3x"></i></a>
+<a href="#"><i class="fab fa-facebook fa-3x"></i></a>
+<a href="#"><i class="fab fa-instagram fa-3x"></i></a>
+</p>
 </footer>
 
   </body>

@@ -55,13 +55,15 @@ class StaticPagesController < ApplicationController
   
   
   
-  def upgrade_admin
+  def upgrade
+       
         @user.update_attribute(:adminrole, true)
         redirect_to :action => :admin_users
   end
     
-    def downgrade_admin
-       @user.update_attribute(:adminrole, false)
+    def downgrade
+      
+         @user.update_attribute(:adminrole, false)
          redirect_to :action => :admin_users
     end   
 

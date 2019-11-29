@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
-
 
 <div id="itemsContainer">
     <table id="customers">
@@ -28,10 +26,11 @@
        
         <td><%= order.status %></td>
         <td><%= link_to 'Show', order, :class => "button", :role => "button" %></td>
+        <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %></td>
         <% if user_signed_in? %>
         <% if current_user.admin? %>
         <td><%= link_to 'Edit', edit_order_path(order), :class => "button", :role => "button" %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %></td>
+        
          <% end %> <% end %>
       </tr>
     <% end %>
