@@ -44,7 +44,7 @@ class WishController < ApplicationController
     @wish = session[:wish] || {} # Get the content of the Cart
     @wish.each do | id, quantity |
     item = Item.find_by_id(id)
-    @wish = @user.wishes.build(:item_id => item.id, :title => item.title, :description => item.description, :image_url => item.image_url, :quantity => quantity, :price=> item.price)
+    @wish = @user.wish.build(:item_id => item.id, :title => item.title, :description => item.description, :image_url => item.image_url, :quantity => quantity, :price=> item.price)
     @wish.save
 end
 

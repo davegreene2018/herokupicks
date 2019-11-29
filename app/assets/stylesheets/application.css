@@ -110,7 +110,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 16px
+    font-size: 1.25em;
     
 }
 
@@ -151,7 +151,7 @@ li a {
     display: inline-block;
     width: 22%;
     padding:10px;
-    min-height: 300px;
+    min-height: 30%;
    
 }
 
@@ -219,7 +219,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 16px
+    font-size: 1em;
     
 }
 
@@ -242,7 +242,7 @@ li a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1em;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -255,7 +255,7 @@ li a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1em;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -364,7 +364,7 @@ li a:hover {
   box-sizing: border-box;
   height: auto;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1em;
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -387,7 +387,7 @@ li a:hover {
   border: none;
   margin-top: 8px;
   margin-right: 16px;
-  font-size: 17px;
+  font-size: 1em;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
@@ -409,7 +409,7 @@ li a:hover {
 .searchbar {
     width: 70%;
     margin-bottom: 40px;
-    font-size: 16px;
+    font-size: 1em;
     text-align: left;
 }
 
@@ -451,7 +451,7 @@ li a:hover {
     display: inline-block;
     width: 22%;
     padding:10px;
-    min-height: 300px;
+    min-height: 30%;
    
 }
 
@@ -462,7 +462,7 @@ li a:hover {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px
+    font-size: 1.25em;
     
 }
 
@@ -473,7 +473,7 @@ li a:hover {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 16px
+    font-size: 1em;
     
 }
 
