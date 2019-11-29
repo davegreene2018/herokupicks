@@ -24,11 +24,15 @@ Rails.application.routes.draw do
   
   get '/cart', to: 'cart#index'
   
+  
   get '/cart/:id', to: 'cart#add'
+  get '/wish/:id', to: 'wish#add'
+  get '/wish', to: 'wish#index'
   
   get '/clearcart', to: 'cart#clearCart'
   
   get '/cart/remove/:id' => 'cart#remove'
+  get '/wish/remove/:id' => 'wish#remove'
   
   get '/cart/decrease/:id' => 'cart#decrease'
   

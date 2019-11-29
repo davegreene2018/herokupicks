@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191116185313) do
+ActiveRecord::Schema.define(version: 20191129125321) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -62,8 +62,22 @@ ActiveRecord::Schema.define(version: 20191116185313) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
+    t.string   "firstname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wishes", force: :cascade do |t|
+    t.integer  "item_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_wishes_on_user_id"
   end
 
 end

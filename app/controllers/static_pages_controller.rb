@@ -8,7 +8,8 @@ class StaticPagesController < ApplicationController
   end
   
   def fender
-       @items = Item.where("brand like ? ", fender)
+       catName = params[:title]
+       @items = Item.where("brand like ? ", catName)
   end
   
   def gibson
@@ -26,7 +27,8 @@ class StaticPagesController < ApplicationController
   def martin
       
   end
-
+  
+  
   
   
   def category

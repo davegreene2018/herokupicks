@@ -1,0 +1,63 @@
+<% if @wish.empty? %>
+<p>You have not added any items yet to your wish list</p>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<div id="itemsContainer">
+    <table id="customers">
+        <% total = 0 %>
+        <% @wish.each do |id, quantity| %>
+        
+        <% item = Item.find_by_id(id) %>
+        
+        <%category= item.category %>
+        <%quantity= quantity %>
+        <% timx = (quantity * item.price)%>  
+        <%special= special %>
+        
+        <% total += quantity * item.price %>            
+        <% if category== "Pick" %>
+        <% quantity =quantity*3 %>
+        <% special ='Get 3 for 1 on all picks. You saved ' %>
+        <% timx = timx%>  
+        <% else %>
+        <% quantity = quantity %>
+        <% timx = timx%>  
+        <% end %>
+        
+        <tr>
+            <td>
+                <div class="image">
+                    <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %>
+                </div>
+                
+            </td>
+            
+            <td class="title"><%= link_to item.title, item %></td>
+            <td><a href="/wish/remove/<%= item.id %>">Remove From Cart</a></td>
+            <td><%= item.category %></td>
+            <td class="price"><%= number_to_currency(item.price, :unit =>"€") %></td>
+            
+            <td class="quantity"><%= quantity %></td>
+           
+            <td class="price"><%= number_to_currency(timx, :unit =>"€") %></td>
+            <td class="Discount"><%= special %></td>
+            
+        </tr>
+        
+
+         <% end %>
+         <tr>
+            Grand Total: <%= number_to_currency(total, :unit => "€") %>
+          </tr>
+          
+          
+            <td>
+                <a href="/checkout" class="button">Checkout</a>
+            </td>
+            
+          </tr>
+           
+    </table>
+      </div>
