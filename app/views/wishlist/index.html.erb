@@ -1,0 +1,72 @@
+<style>
+    
+#wishlist {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#wishlist td, #wishlist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#wishlist tr:nth-child(even){background-color: #f2f2f2;}
+
+#wishlist tr:hover {background-color: #ddd;}
+
+#wishlist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+    
+</style>
+<h1>Wishlist</h1>
+<% if @wishlist.empty? %>
+<p>You have not added any items to your Wishlist yet!</p>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<div id="itemsContainer">
+    <table id="wishlist">
+        <% total = 0 %>
+        <% @wishlist.each do |id, quantity| %>
+        
+            <% item = Item.find_by_id(id) %>
+            <% total += item.price %>
+            
+            <tr>
+                <td>
+                    <div class="image">
+                        <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %>
+                    </div>
+                    
+                </td>
+                
+                <td class="title"><%= link_to item.title, item %></td>
+                <td><a href="/wishlist/remove/<%= item.id %>"class="button">Remove From Wishlist</a></td>
+                <td><a href="/cart/<%= item.id %>" class="button">Add to Cart</a></td>
+                <td class="price"><%= number_to_currency(item.price, :unit =>"€") %></td>
+                
+            </tr>
+
+        <% end %>
+        
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td>Wishlist Total: <%= number_to_currency(total, :unit => "€") %></td>
+            </tr>
+           
+    </table>
+
+</div>
+
+

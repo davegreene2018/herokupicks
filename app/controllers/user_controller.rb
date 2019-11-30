@@ -3,6 +3,7 @@ class UserController < ApplicationController
     def login
         session[:login] = 1
         session[:cart] = nil
+        session[:wishlist] = nil
         flash[:notice] = "Admin Login sucessfull!!"
         redirect_to :controller => :items
     end 
@@ -10,6 +11,7 @@ class UserController < ApplicationController
     def logout
         session[:login] = nil
         session[:cart] = nil
+        session[:wishlist] = nil
         flash[:notice] = "You have been successfully logged out!!"
         redirect_to :controller => :items
     end    
