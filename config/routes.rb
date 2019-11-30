@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  
+
   resources :wishlists
   resources :categories
   resources :orders do 
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
     resources :orders 
   end
   get 'cart/index'
-
+  get 'wishlist/index'
   resources :items
   root :to => 'static_pages#home'
 
@@ -23,21 +25,16 @@ Rails.application.routes.draw do
   get '/logout' => 'user#logout'
   
   get '/cart', to: 'cart#index'
-  
-  
   get '/cart/:id', to: 'cart#add'
-  get '/wish/:id', to: 'wish#add'
-  get '/wish', to: 'wish#index'
-  
+  get '/cart/remove/:id' => 'cart#remove'  
   get '/clearcart', to: 'cart#clearCart'
-  
-  get '/cart/remove/:id' => 'cart#remove'
-  get '/wish/remove/:id' => 'wish#remove'
-  
   get '/cart/decrease/:id' => 'cart#decrease'
+  get '/cart/increase/:id' => 'cart#increase'  
   
-  get '/cart/increase/:id' => 'cart#increase'
-  
+  get '/wishlist', to: 'wishlist#index'
+  get '/wishlist/:id', to: 'wishlist#addToWish'
+  get '/wishlist/remove/:id' => 'wishlist#remove'
+
   get '/checkout' => 'cart#createOrder'
   
   get '/paid/:id' => 'static_pages#paid'
@@ -61,11 +58,8 @@ Rails.application.routes.draw do
   get '/taylor' => 'static_pages#taylor'
   get '/martin' => 'static_pages#martin'
   get '/takamine' => 'static_pages#takamine'
+  get '/yahama' => 'static_pages#yamaha'
   
-  
-  
-  
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

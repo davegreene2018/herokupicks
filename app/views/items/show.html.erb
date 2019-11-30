@@ -16,7 +16,9 @@
         Brand: <%= @item.brand %></p>
        
        <p>
-        <a href="/cart/<%= @item.id %>" class="button">Add to Cart</a> 
+        
+        <a href="/cart/<%= @item.id %>" class="button">Add to Cart</a>
+        <a href="/wishlist/<%= @item.id %>" class="button">Add to Wishlist</a> 
          <% if user_signed_in? %>
          
          <% if current_user.admin? %> 

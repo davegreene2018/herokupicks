@@ -1,0 +1,40 @@
+<h1>Wishlist</h1>
+<% if @wishlist.empty? %>
+<p>You have not added any items to your Wishlist yet!</p>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<div id="itemsContainer">
+    <table id="customers">
+        <% total = 0 %>
+        <% @wishlist.each do |id, quantity| %>
+        
+        <% item = Item.find_by_id(id) %>
+        
+        <tr>
+            <td>
+                <div class="image">
+                    <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %>
+                </div>
+                
+            </td>
+            
+            <td class="title"><%= link_to item.title, item %></td>
+            <td><a href="/wishlist/remove/<%= item.id %>">Remove From Wishlist</a></td>
+            <td class="price"><%= number_to_currency(item.price, :unit =>"€") %></td>
+            
+        </tr>
+        
+        <tr>
+            <% total += quantity * item.price %>
+          </tr>
+         <% end %>
+         <tr>
+            Wishlist Total: <%= number_to_currency(total, :unit => "€") %>
+          </tr>
+           
+    </table>
+      </div>
+
+
