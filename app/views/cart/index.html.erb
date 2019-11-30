@@ -1,3 +1,30 @@
+<style>
+    
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+    
+</style>
+
 <% if @cart.empty? %>
 <p>You have not added any items yet</p>
 <% end %>
@@ -23,7 +50,7 @@
         <% timx = timx%>  
         <% else %>
         <% quantity = quantity %>
-        <% timx = timx%>  
+        <% timx = timx %>  
         <% end %>
         
         <tr>
@@ -48,11 +75,28 @@
         
 
          <% end %>
-         <tr>
-            Grand Total: <%= number_to_currency(total, :unit => "€") %>
-          </tr>
+         
+        <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+             <td></td>
+             <td></td>
+            <td></td>
           
+            <td>Grand Total: <%= number_to_currency(total, :unit => "€") %></td>
+          
+            
+          </tr>
            <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td></td>
              <td>
             <a href="/items" class="button">Continue Shopping</a> 
             </td>
