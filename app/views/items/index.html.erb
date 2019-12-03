@@ -9,7 +9,7 @@
        <h1><%= item.title %></h1>
        
        <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
-        <p><%= item.description %></p>
+       
        <p>Price <%= number_to_currency(item.price, :unit => "€") %>
        <br>
         Category: <%= item.category %>
@@ -17,17 +17,19 @@
         Brand: <%= item.brand %></p>
        
        <p>
-       <%= link_to 'View',  item, :class => "button", :role => "button" %>
+       <%= link_to "View",  item, :class => "button", :role => "button"  %>
+       
         
        <% if user_signed_in? %>
         <% if current_user.admin? %>
          <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role=>"button" %>
-         <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
+         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
         <% end %>
        <% end %>
-
-       <a href="/cart/<%= item.id %>" class="button">Add to Cart</a>
-       <a href="/wishlist/<%= item.id %>" class="button">Add To Wishlist</a>
+</br>
+       <a href="/cart/<%= item.id %>" class="", title="Add <%=item.title %> to your cart"><i class="fas fa-cart-plus fa-3x"></i> </a>
+       &nbsp;&nbsp;
+       <a href="/wishlist/<%= item.id %>"class="", title="Add <%=item.title %> to your wishlist"><i class="fas fa-heart fa-3x"></i></a>
                 
        </p>
         

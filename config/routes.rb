@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get '/taylor' => 'static_pages#taylor'
   get '/martin' => 'static_pages#martin'
   get '/takamine' => 'static_pages#takamine'
-  get '/yahama' => 'static_pages#yamaha'
+  get '/yahama' => 'static_pages#yahama'
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
