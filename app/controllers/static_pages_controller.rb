@@ -9,32 +9,33 @@ class StaticPagesController < ApplicationController
   
   def fender
     brand = params[:brand]
-    @items = Item.where("brand ILIKE ?", "%#{fender}%") 
+    @items = Item.where("brand LIKE ?", "%#{fender}%")
+    #@items = Item.where("brand ILIKE ?", "%#{fender}%") 
   end
   
   def gibson
       brand = params[:brand]
-     @items = Item.where("brand ILIKE ?", "%#{gibson}%") 
+    @items = Item.where("brand LIKE ?", "%#{gibson}%") 
   end
   
   def taylor
       brand = params[:brand]
-     @items = Item.where("brand ILIKE ?", "%#{martin}%") 
+     @items = Item.where("brand LIKE ?", "%#{martin}%") 
   end
   
   def takamine 
       brand = params[:brand]
-     @items = Item.where("brand ILIKE ?", "%#{takamine}%") 
+     @items = Item.where("brand LIKE ?", "%#{takamine}%") 
   end
   
   def martin
      brand = params[:brand]
-     @items = Item.where("brand ILIKE ?", "%#{taylor}%") 
+    @items = Item.where("brand LIKE ?", "%#{taylor}%") 
   end
 
   def yahama
     brand = params[:brand]
-     @items = Item.where("brand ILIKE ?", "%#{yahama}%") 
+     @items = Item.where("brand LIKE ?", "%#{yahama}%") 
   end
   
   
