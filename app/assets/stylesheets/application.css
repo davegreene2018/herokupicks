@@ -4,7 +4,7 @@ body {
 }
 
 .headSec {
-    background: url("/assets/Site/background.jpg");
+    background: url("/assets/background.jpg");
     background-repeat: no-repeat;
     background-size:100% 100%;
     min-height:10px;
