@@ -9,8 +9,9 @@ class StaticPagesController < ApplicationController
   
   def fender
     brand = params[:brand]
-    @items = Item.where("brand like ?", "%#{fender}%")
-    #@items = Item.where("brand ILIKE ?", "%#{fender}%") 
+    #@items = Item.where("brand like ?", "%#{fender}%")
+    l_name_var = "nan"
+     @items = Item.where("item.brand LIKE :l_name", {:l_name => "#{l_name_var}%"}) 
   end
   
   def gibson
