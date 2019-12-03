@@ -16,27 +16,27 @@ class StaticPagesController < ApplicationController
   
   def gibson
       brand = params[:brand]
-    @items = Item.where("brand like ?", "%gibson%").all 
+    @items = Item.where("brand ILIKE ?", "%gibson%").all 
   end
   
   def taylor
       brand = params[:brand]
-     @items = Item.where("brand like ?", "%martin%").all 
+     @items = Item.where("brand ILIKE ?", "%martin%").all 
   end
   
   def takamine 
       brand = params[:brand]
-     @items = Item.where("brand like ?", "%takamine%").all 
+     @items = Item.where("brand ILIKE ?", "%takamine%").all 
   end
   
   def martin
      brand = params[:brand]
-    @items = Item.where("brand like ?", "%taylor%").all
+    @items = Item.where("brand ILIKE ?", "%taylor%").all
   end
 
   def yahama
     brand = params[:brand]
-     @items = Item.where("brand like ?", "%yahama%").all 
+     @items = Item.where("brand ILIKE ?", "%yahama%").all 
   end
   
   
