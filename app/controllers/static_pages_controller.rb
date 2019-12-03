@@ -8,24 +8,41 @@ class StaticPagesController < ApplicationController
   end
   
   def fender
-       catName = params[:title]
-       @items = Item.where("brand like ? ", catName)
+    brand = params[:brand]
+    #@items = Item.where("brand like ?", "%#{fender}%")
+    
+     @items = Item.where('brand ILIKE ?', '%fender%').all # posql
+      #@items = Item.where('brand like?', '%fender%').all # sqlite3 for development # out for deployment
   end
   
   def gibson
-      
+      brand = params[:brand]
+      @items = Item.where("brand ILIKE ?", "%gibson%").all 
+      #@items = Item.where("brand like ?", "%gibson%").all # sqlite3 for development # out for deployment
   end
   
   def taylor
-      
+      brand = params[:brand]
+      @items = Item.where("brand ILIKE ?", "%martin%").all 
+      #@items = Item.where("brand like ?", "%martin%").all # sqlite3 for development # out for deployment
   end
   
   def takamine 
-      
+      brand = params[:brand]
+      @items = Item.where("brand ILIKE ?", "%takamine%").all
+      #@items = Item.where("brand like ?", "%takamine%").all  # sqlite3 for development # out for deployment
   end
   
   def martin
-      
+     brand = params[:brand]
+    @items = Item.where("brand ILIKE ?", "%taylor%").all
+    #@items = Item.where("brand like ?", "%taylor%").all # sqlite3 for development # out for deployment
+  end
+
+  def yahama
+    brand = params[:brand]
+     @items = Item.where("brand ILIKE ?", "%yahama%").all
+     #@items = Item.where("brand like ?", "%yahama%").all # sqlite3 for development # out for deployment
   end
   
   

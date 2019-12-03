@@ -10,6 +10,7 @@
   <head>
     <title><%= yield(:title) %> </title>
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/c260db8988.js" crossorigin="anonymous"></script>
@@ -35,28 +36,39 @@
           
        <li><%= link_to "HOME", "/" %></li>
         <div class="dropdown">
-          <button class="dropbtn"><b>PRODUCTS </b><i class="fa fa-caret-down"></i></button>
+          <button class="dropbtn"><b><i class="fas fa-tag"></i>&nbsp;PRODUCTS </b><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
               <div>
-                </li><%= link_to "Electric Guitars", "category/Electric%20Guitars"  %></li>
-                </li><%= link_to "Acoustic Guitars", "category/Acoustic%20Guitars"  %></li>
-                </li><%= link_to "Bass Guitars", "category/Bass%20Guitars"  %></li>
-                </li><%= link_to "Amplifiers", "/items"  %></li>
-                </li><%= link_to "Accessories", "/items"  %></li>
+              </li><%= link_to "All Products", "/items"  %></li>
+               
+                 </li><%= link_to "FENDER", fender_path  %></li>
+                 </li><%= link_to "GIBSON", gibson_path  %></li>
+                 </li><%= link_to "TAYLOR", taylor_path  %></li>
+                 </li><%= link_to "MARTIN", martin_path  %></li>
+                 </li><%= link_to "TAKAMINE", takamine_path  %></li>
+                 </li><%= link_to "YAHAMA", yahama_path  %></li>
+              
+                
               </div>
             </div> 
         </div>
-      
-        <li><%= link_to "HELP", help_path %></li>
-        <li><%= link_to "VIEW CART", "/cart" %></li>        
-        <li><%= link_to "SEARCH", search_path  %></li>
         
+        <li><%= link_to "HELP", help_path %></li>
+         <div class="dropdown">
+            <button class="dropbtn"><b><i class="fas fa-shopping-cart fa x2"></i>&nbsp;CART </b><i class="fa fa-caret-down"></i></button>
+              <div class="dropdown-content">
+        </li><%= link_to "VIEW CART", "/cart" %></li>
+        </div>
+      </div>   
+     <li><%= link_to "SEARCH", search_path   %></li>
+     
         <% if user_signed_in? %>
           <div class="dropdown">
-            <button class="dropbtn"><b>MY ACCOUNT </b><i class="fa fa-caret-down"></i></button>
+            <button class="dropbtn"><b><i class="fas fa-user fa x2"></i>&nbsp;MY ACCOUNT </b><i class="fa fa-caret-down"></i></button>
               <div class="dropdown-content">   
                  </li><%= link_to "Wishlist", "/wishlist" %></li>
                  </li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                 </li><%= link_to "Orders", orders_path  %></li>
                  </li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
               </div>
           </div>
@@ -68,7 +80,7 @@
         <% if user_signed_in? %>
           <% if current_user.admin? %>
             <div class="dropdown">
-              <button class="dropbtn"><b>ADMIN </b> <i class="fa fa-caret-down"></i></button>
+              <button class="dropbtn"><b><i class="fas fa-cog fa x2"></i>&nbsp; ADMIN </b> <i class="fa fa-caret-down"></i></button>
               <div class="dropdown-content">
                 </li><%= link_to "Users", users_path  %></li>
                 </li><%= link_to 'New Category', new_category_path %></li>
