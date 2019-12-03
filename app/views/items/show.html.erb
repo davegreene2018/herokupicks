@@ -17,9 +17,9 @@
        
        <p>
         
-        <a href="/cart/<%= @item.id %>" class=""><i class="fas fa-cart-plus fa-3x"></i></a>
+        <a href="/cart/<%= @item.id %>" class="", title="Add <%=@item.title %> to your cart"><i class="fas fa-cart-plus fa-3x"></i></a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/wishlist/<%= @item.id %>" class=""><i class="fas fa-heart fa-3x"></i></a> 
+        <a href="/wishlist/<%= @item.id %>" class="", title="Add <%=@item.title %> to your wishlist"><i class="fas fa-heart fa-3x"></i></a> 
       </p><br>
          <% if user_signed_in? %>
           <%= link_to 'Back',  items_path, :class => "button", :role => "button" %>
