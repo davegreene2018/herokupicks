@@ -13,19 +13,28 @@ class StaticPagesController < ApplicationController
   end
   
   def gibson
-      
+      catName = params[:title]
+       @items = Item.where("brand like ? ", catName)
   end
   
   def taylor
-      
+      catName = params[:title]
+       @items = Item.where("brand like ? ", catName)
   end
   
   def takamine 
-      
+      catName = params[:title]
+       @items = Item.where("brand like ? ", catName)
   end
   
   def martin
-      
+      catName = params[:title]
+       @items = Item.where("brand like ? ", catName)
+  end
+
+  def yahama
+      catName = params[:title]
+      @items = Item.where("brand like ? ", catName)
   end
   
   

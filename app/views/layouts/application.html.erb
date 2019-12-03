@@ -4,6 +4,7 @@
     <title><%= yield(:title) %> </title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 
 
@@ -96,11 +97,16 @@
           <button class="dropbtn"><b>PRODUCTS </b><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
               <div>
-                </li><%= link_to "Electric Guitars", "category/Electric%20Guitars"  %></li>
-                </li><%= link_to "Acoustic Guitars", "category/Acoustic%20Guitars"  %></li>
-                </li><%= link_to "Bass Guitars", "category/Bass%20Guitars"  %></li>
-                </li><%= link_to "Amplifiers", "/items"  %></li>
-                </li><%= link_to "Accessories", "/items"  %></li>
+              </li><%= link_to "All Products", "/items"  %></li>
+               
+                 </li><%= link_to "FENDER", fender_path  %></li>
+                 </li><%= link_to "GIBSON", gibson_path  %></li>
+                 </li><%= link_to "TAYLOR", taylor_path  %></li>
+                 </li><%= link_to "MARTIN", martin_path  %></li>
+                 </li><%= link_to "TAKAMINE", takamine_path  %></li>
+                 </li><%= link_to "YAHAMA", yahama_path  %></li>
+              
+                
               </div>
             </div> 
         </div>
@@ -115,6 +121,7 @@
               <div class="dropdown-content">   
                  </li><%= link_to "Wishlist", "/wishlist" %></li>
                  </li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                 </li><%= link_to "Orders", orders_path  %></li>
                  </li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
               </div>
           </div>
@@ -139,7 +146,6 @@
       </ul>   
     </div>
         
-      
     
 
     <div class="container">
