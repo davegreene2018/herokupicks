@@ -16,6 +16,12 @@ body {
     
 }
 
+.eye {
+  background: url("/assets/eye.jpg");
+  background-repeat: no-repeat;
+   background-size:100% 100%;
+}
+
 .headSec h1 {
     color: #ffffff;
     font-size: 80px;
