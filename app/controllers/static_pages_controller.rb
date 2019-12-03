@@ -33,7 +33,7 @@ class StaticPagesController < ApplicationController
   end
 
   def yahama
-      bbrand = params[:brand]
+    brand = params[:brand]
     @items = Item.where('brand LIKE ?', '%yahama%').all
   end
   
