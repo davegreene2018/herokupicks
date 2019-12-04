@@ -1,18 +1,29 @@
 
 <div class="mainCont">
     
-    <h1>All The People...... So Many People....</h1>
+   
     
 <% @users.each do |user| %>
 
 
-    <div class="itemhols">
+    <div class="itemholsHome">
+    	<table>
+    		<tr>
+    			<td>User Id</td>
+    		    <td>email</td>
+    		    <td>Admin:</td>
+    		    <td>Upgrade</td>
+    		    <td>Downgrade</td>
+    		</tr>
+    		<tr>
+    			<td><%= user.id %></td>
+    		    <td><%= user.email %></td>
+    		    <td> <%= user.admin %></td>
+    		    <td><a href="/upgrade/<%= user.id %>" class="button">Make Admin</a></td>
+    		    <td><a href="/downgrade/<%= user.id %>" class="button">Remove Admin</a></td>
+    		</tr>
     
-   <h1>User Id: <%= user.id %></h1>
-   <h1>email: <%= user.email %></h1>
-   <h1>Admin: <%= user.admin %></h1>
-    <p><a href="/upgrade/<%= user.id %>" class="button">Make Admin</a></p>
-    <p><a href="/downgrade/<%= user.id %>" class="button">Remove Admin</a></p>
+   </table>
     </div>
    
 <% end %>
