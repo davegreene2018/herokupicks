@@ -2,12 +2,12 @@
 <div class="mainCont">
     
    
-        <table>
-<% @users.each do |user| %>
+    
+
 
 
     <div id="customers">
-    
+        <table>
     		<tr>
     			<td>User Id</td>
     		    <td>email</td>
@@ -15,6 +15,7 @@
     		    <td>Upgrade</td>
     		    <td>Downgrade</td>
     		</tr>
+            <% @users.each do |user| %>
     		<tr>
     			<td><%= user.id %></td>
     		    <td><%= user.email %></td>
