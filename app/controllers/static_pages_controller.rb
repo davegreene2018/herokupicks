@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
   
   def taylor
       brand = params[:brand]
-      @items = Item.where("brand ILIKE ?", "%martin%").all 
+      @items = Item.where("brand ILIKE ?", "%taylor%").all 
       #@items = Item.where("brand like ?", "%martin%").all # sqlite3 for development # out for deployment
   end
   
@@ -35,7 +35,7 @@ class StaticPagesController < ApplicationController
   
   def martin
      brand = params[:brand]
-    @items = Item.where("brand ILIKE ?", "%taylor%").all
+    @items = Item.where("brand ILIKE ?", "%martin%").all
     #@items = Item.where("brand like ?", "%taylor%").all # sqlite3 for development # out for deployment
   end
 
