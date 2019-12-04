@@ -9,18 +9,18 @@
     <div class="itemholsUser">
     	<table>
     		<tr>
-    			<td width="60px">User Id</td>
-    		    <td width="60px">email</td>
-    		    <td width="60px">Admin:</td>
-    		    <td width="60px">Upgrade</td>
-    		    <td width="60px">Downgrade</td>
+    			<td>User Id</td>
+    		    <td>email</td>
+    		    <td>Admin:</td>
+    		    <td>Upgrade</td>
+    		    <td>Downgrade</td>
     		</tr>
     		<tr>
-    			<td width="60px"><%= user.id %></td>
-    		    <td width="60px"><%= user.email %></td>
-    		    <td width="60px"> <%= user.admin %></td>
-    		    <td width="60px"><a href="/upgrade/<%= user.id %>" class="button">Make Admin</a></td>
-    		    <td width="60px"><a href="/downgrade/<%= user.id %>" class="button">Remove Admin</a></td>
+    			<td><%= user.id %></td>
+    		    <td><%= user.email %></td>
+    		    <td> <%= user.admin %></td>
+    		    <td><a href="/upgrade/<%= user.id %>" class="button">Make Admin</a></td>
+    		    <td><a href="/downgrade/<%= user.id %>" class="button">Remove Admin</a></td>
     		</tr>
     
    </table>
