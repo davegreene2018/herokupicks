@@ -32,7 +32,7 @@
   
   
      <h1 align="center"> Similar items of interest</h1>
-      <% @orderitems.order(id: :desc).limit(3).each  do |orderitem| %>
+      <% @orderitems.order(id: :desc).limit(4).each  do |orderitem| %>
       <div class="itemhols">
        <h1><%= orderitem.title %></h1> 
        <%= link_to (image_tag orderitem.image_url, :class => "itemholsIm"), @item %>
