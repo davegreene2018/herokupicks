@@ -10,7 +10,7 @@
        
        <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
        
-       <p>Price €<%= number_to_currency(item.price, :unit => "€") %>
+       <p>Price <%= number_to_currency(item.price, :unit => "€") %>
        <br>
         Category: <%= item.category %>
         <br>
