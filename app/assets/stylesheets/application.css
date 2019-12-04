@@ -193,6 +193,19 @@ li a {
    
 }
 
+.itemholsUser {
+    margin-left: 4%;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    padding:10px;
+    border: 0px solid #333333;
+    
+    text-align: center;
+   
+}
+
 #itemsContainerBag {
     width: 80%;
     
