@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   
   get '/downgrade/:id' => 'static_pages#downgrade'
   
+  get '/delete/:id' => 'orders#delete'
+  
   post '/search' => 'items#search'
   
   get '/search' => 'static_pages#searchproducts'
