@@ -3,11 +3,10 @@
     
    
     
+<% @users.each do |user| %>
 
 
-
-    <div class="itemholsUser">
-         <% @users.each do |user| %>
+    <div id="customers">
         <table>
     		<tr>
     			<td>User Id</td>
@@ -16,9 +15,7 @@
     		    <td>Upgrade</td>
     		    <td>Downgrade</td>
     		</tr>
-
     		<tr>
-                
     			<td><%= user.id %></td>
     		    <td><%= user.email %></td>
     		    <td> <%= user.admin %></td>
