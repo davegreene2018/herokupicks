@@ -201,7 +201,13 @@ li a {
     padding:10px;
     
     
-    text-align: center;
+    text-align: left;
+   
+}
+
+.itemholsUser td {
+   
+    width: 20%;
    
 }
 
