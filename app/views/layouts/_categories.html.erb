@@ -1,6 +1,6 @@
 <% @categories.each do |category| %>
        <div class="itemholsHome">
-           <p><%= category.title %></p>
+          
            <%= link_to (image_tag category.image, :class=>"itemholsIm"), category %>
           
            <p><a href="/category/<%= category.title %>" class="button"><%= category.title %></a></p>
