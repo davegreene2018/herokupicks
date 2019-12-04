@@ -398,7 +398,7 @@ input[type=submit]:hover {
 }
 
 #customers td, #customers th {
-    border: 0px solid #ddd;
+    border: 0px solid #FFF;
     padding: 8px;
 }
 
