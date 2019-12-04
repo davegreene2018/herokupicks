@@ -452,7 +452,7 @@ li a:hover {
   border-top-right-radius: 0;
 }
 
-/* Style the search box inside the navigation bar */
+/* Style the search box  */
 .searchbar input[type=text] {
   float: right;
   padding: 6px;
