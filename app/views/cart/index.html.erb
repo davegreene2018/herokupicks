@@ -41,12 +41,12 @@
         <%category= item.category %>
         <%quantity= quantity %>
         <% timx = (quantity * item.price)%>  
-        <%special= special %>
+        <%savings= (3*(quantity * item.price))-(quantity * item.price) %>
         
         <% total += quantity * item.price %>            
-        <% if category== "Pick" %>
+        <% if category== "Accessories" %>
         <% quantity =quantity*3 %>
-        <% special ='Get 3 for 1 on all picks. You saved ' %>
+        <% special ="Get 3 for 1 on all picks. You saved #{savings}" %>
         <% timx = timx%>  
         <% else %>
         <% quantity = quantity %>
