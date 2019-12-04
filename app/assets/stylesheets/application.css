@@ -26,7 +26,7 @@ body, html {
   background-position: center;
   background-size: cover;
   background-image: url("/assets/backround.jpg");
-  min-height: 75%;
+  min-height: 50%;
 }
 
 
